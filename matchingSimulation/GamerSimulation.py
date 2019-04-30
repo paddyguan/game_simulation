@@ -21,8 +21,7 @@ class GamerBase:
         # Gaussian distribution
         if GamerBase.distributionType == 0:
             tmpRandom = numpy.random.normal(50, 30, GamerBase.count)
-
-            for i in range(1, GamerBase.count+1):
+            for i in range(GamerBase.count):
                 # tmpFightCapacity = tmpRandom[i] * GamerBase.fightCapacityRange[1]
                 gamersList[i].fightCapacity = int(tmpRandom[i])
 
@@ -37,10 +36,10 @@ class GamePropertyBase:
 
 if __name__ == '__main__':
 
-    gamers = []
+    gamers = list()
 
     for i in range(100):
-        gamers[i] = GamerBase()
+        gamers.append(GamerBase())
 
     GamerBase.init_gamers_capacity(gamers)
 
